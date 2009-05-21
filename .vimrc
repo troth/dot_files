@@ -4,6 +4,8 @@
 """ $Id: .vimrc,v 1.6 2001/12/10 21:14:48 troth Exp $
 """
 
+filetype plugin indent on
+
 set nocompatible	" Use Vim defaults (much better!)
 set bs=2		" allow backspacing over everything in insert mode
 set noai		" always set autoindenting on
