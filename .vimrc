@@ -35,6 +35,11 @@ if has("autocmd")
   "autocmd BufReadPost * if line("'\"") | exe "'\"" | endif
 endif
 
+if has("python")
+  "autocmd FileType python setlocal omnifunc=pysmell#Complete
+  autocmd FileType python set omnifunc=pythoncomplete#Complete
+endif
+
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
