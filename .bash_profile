@@ -22,6 +22,7 @@ PATH=$PATH:/usr/sbin:/sbin
 PATH=$PATH:$HOME/local/bin
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/local/arm-elf-lpc-newlib/bin
+PATH=$HOME/local/emacs/bin:$PATH
 #PATH=$PATH:$HOME/local/avr/bin
 #PATH=$PATH:$HOME/local/msp430/bin
 #PATH=$PATH:/srv/shared/gnuarm/gnuarm/bin
@@ -67,4 +68,7 @@ export RAPPER_RAP_PORT=/dev/ttyUSB0
 export LANG=C
 export LC_ALL=C
 
-. $HOME/bin/setprompt
+if [ -e $HOME/bin/setprompt ]
+then
+	. $HOME/bin/setprompt
+fi
