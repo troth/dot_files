@@ -1,3 +1,6 @@
 auto-save-list
 semanticdb
 *.elc
+session.*
+ecb-git
+dict

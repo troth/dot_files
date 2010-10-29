@@ -9,9 +9,11 @@
 
 ;;; Mode customizations.
 (load "init-cedet")
+(load "init-ecb")
 (load "init-asm-mode")
 (load "init-c-mode")
 (load "init-python-mode")
+;;(load "init-auto-complete")
 
 ;;; Customize key mappings.
 ;;; Must be last since it uses functions defined in other modules.
