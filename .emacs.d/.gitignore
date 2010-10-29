@@ -3,5 +3,4 @@ semanticdb
 *.elc
 session.*
 ecb-git
-dict
 ac-comphist.dat
