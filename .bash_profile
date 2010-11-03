@@ -15,6 +15,11 @@ if [ -e $HOME/.xenvironment ]; then
 	. $HOME/.xenvironment
 fi
 
+# Load a local profile if it exists
+if [ -f $HOME/.bash_profile_local ]; then
+	. $HOME/.bash_profile_local
+fi
+
 # Add things that are usually only in root's path.
 PATH=$PATH:/usr/sbin:/sbin
 
