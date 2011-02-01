@@ -5,6 +5,7 @@
 (setq load-path (cons "~/.emacs.d" load-path))
 
 (load "init-misc")
+(load "init-scroll")
 (load "init-font-lock")
 
 ;;; Mode customizations.
