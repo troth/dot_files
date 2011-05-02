@@ -2,5 +2,5 @@ auto-save-list
 semanticdb
 *.elc
 session.*
-ecb-git
+site-el/ecb
 ac-comphist.dat
