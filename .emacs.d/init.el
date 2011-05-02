@@ -3,6 +3,7 @@
 ;;;
 
 (setq load-path (cons "~/.emacs.d" load-path))
+(setq load-path (cons "~/.emacs.d/site-el" load-path))
 
 (load "init-misc")
 (load "init-scroll")
