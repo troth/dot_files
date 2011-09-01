@@ -47,7 +47,7 @@ then
 	. $HOME/bin/setprompt
 fi
 
-PS1='>>> [\T \D{%P}][\!:\#]$(__git_ps1 " Branch: %s")\n>>> [\u@\h:\w]\n>>> \$ '
+PS1='\n\[\033[32m\]### \[\033[34m\][\T \D{%P}]\[\033[36m\][\!:\#]$(__git_ps1 "\[\033[31m\] Branch: %s")\n\[\033[32m\]### [\u@\h:\w]\[\033[0m\]\n>--> \$ '
 
 # Load a local profile if it exists
 if [ -f ~/.bash_profile_local ]; then
