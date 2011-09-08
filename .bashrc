@@ -27,53 +27,50 @@ alias lc='ls -al'
 alias resh='source ~/.bash_profile'
 alias rm='rm -i'
 alias cp='cp -i'
+alias env='env | sort'
 
-#alias path='echo $PATH'
-
-alias dlp='lp -o sides=two-sided-long-edge'
-
-alias cpatch='$HOME/bin/cpatch'
-alias spatch='$HOME/bin/spatch'
-
-alias davarice='avarice --ignore-intr :1212'
-
-alias qmake='qmake-qt4'
-
-function path ()
+path ()
 {
 	(IFS=":"; for p in $PATH; do echo $p; done)
 }
 
-function cpd ()
-{
-    eval cd $(cat $HOME/.curr_proj_dir 2>/dev/null)
-}
-
-# Function to add a dir to the end of PATH
-function addpath ()
+# Function to add a dir to the end of PATH unless arg2 is "front"
+addpath ()
 {
 	if [ -n $1 ]
 	then
-		PATH="${PATH}:${1}"
-		export PATH
-		echo "PATH is now:"
-		echo $PATH
+		if ! echo $PATH | /bin/egrep -q "(^|:)$1($|:)"
+		then
+			if [ "$2" = "front" ]; then
+				PATH=$1:${PATH}
+			else
+				PATH=${PATH}:$1
+			fi
+			export PATH
+			echo "PATH is now:"
+			echo $PATH
+		fi
 	fi
 }
 
-# Function to add a dir to the beginning (front) of PATH
-function faddpath ()
+add_ldpath ()
 {
 	if [ -n $1 ]
 	then
-		PATH="${1}:${PATH}"
-		export PATH
-		echo "PATH is now:"
-		echo $PATH
+		if ! echo $LD_LIBRARY_PATH | /bin/egrep -q "(^|:)$1($|:)"
+		then
+			if [ "$2" = "front" ]; then
+				LD_LIBRARY_PATH=$1:${LD_LIBRARY_PATH}
+			else
+				LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$1
+			fi
+			export LD_LIBRARY_PATH
+		fi
 	fi
 }
 
-function rmpath ()
+
+rmpath ()
 {
 	if [ -x $HOME/bin/rmpath.py ]
 	then
@@ -88,3 +85,8 @@ function rmpath ()
 
 # call rmpath to clean up PATH variable
 rmpath >/dev/null 2>&1
+
+# Source the debian supplied user .bashrc file
+if [ -f ~/.bashrc.local ]; then
+	. ~/.bashrc.local
+fi
