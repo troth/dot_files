@@ -1,0 +1,15 @@
+startup_message off
+
+#
+# Add a screen status bar.
+#
+caption always "%{= ck}%H.potager > %t  %= %Y-%m-%d | %c"
+
+#
+# Put a status line at the bottom of the screen.
+#
+hardstatus alwayslastline "%-Lw%{+b kc}%50>%n%f* %t%{-}%+Lw%<"
+
+autodetach on
+defscrollback 5120
+
