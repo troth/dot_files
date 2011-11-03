@@ -18,9 +18,14 @@ set ruler		" show the cursor position all the time
 "set expandtab           " insert spaces instead of tabs
 
 "Map C-n to tabnext and C-p ro tabprevious.
-nnoremap <silent> <C-n> :tabnext<CR>
-nnoremap <silent> <C-p> :tabprevious<CR>
+"" These aren't needed - C-PageUp/C-PageDown work the same.
+"nnoremap <silent> <C-n> :tabnext<CR>
+"nnoremap <silent> <C-p> :tabprevious<CR>
 set tabpagemax=15
+
+" Alt-right/left to navigate forward/backward in the tags stack
+map <M-Left> <C-T>
+map <M-Right> <C-]>
 
 " Highlight extra white space at end of line.
 highlight WhiteSpaceEOL ctermbg=darkgreen guibg=lightgreen
@@ -44,6 +49,26 @@ if has("python")
   "autocmd FileType python setlocal omnifunc=pysmell#Complete
   autocmd FileType python set omnifunc=pythoncomplete#Complete
 endif
+
+" Add additional tags files here.
+set tags=tags;/
+set tags+=~/.vim/tags/cpp
+"set tags+=~/.vim/tags/gl
+"set tags+=~/.vim/tags/sdl
+"set tags+=~/.vim/tags/qt4
+
+" Omni CPP Complete
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -130,10 +155,10 @@ nmap ,hx wbF<df>f<df>
 if version >= 500
 	" Tabs are evil. Everyone uses a different tabstop.
 	" This will force expanding of tabs into appropriate number of spaces.
-	"set expandtab
+	set expandtab
 
 	" define a function for cycling the tabstops from 2 -> 4 -> 8 -> 2
-	"set ts=4 sw=4
+	set ts=4 sw=4
 	"function Toggle_Tab_Width()
 	"	if &ts == 2
 	"		set ts=4 sw=4

@@ -1,3 +1,4 @@
 .*.swp
-.vim/tags
+.vim/tags/cpp
+.vim/tags/cpp_src
 .vim/.netrwhist
