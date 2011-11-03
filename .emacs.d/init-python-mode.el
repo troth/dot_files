@@ -15,6 +15,7 @@
   ;(setq indent-tabs-mode nil)
   ;(setq py-smart-indentation nil)
   ;(setq py-indent-offset 4)
-  ;(setq py-python-command "python"))
+  ;(setq py-python-command "python")
+  ;)
 
 ;(add-hook 'python-mode-hook 'my-python-hook)
