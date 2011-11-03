@@ -35,6 +35,11 @@ if has("autocmd")
   "autocmd BufReadPost * if line("'\"") | exe "'\"" | endif
 endif
 
+"" Stop SuperTab from hijacking the tab key.
+let g:SuperTabMappingForward = '<c-space>'
+let g:SuperTabMappingBackward = '<s-c-space>'
+"let g:SuperTabMappingTabLiteral = '<c-tab>'
+
 if has("python")
   "autocmd FileType python setlocal omnifunc=pysmell#Complete
   autocmd FileType python set omnifunc=pythoncomplete#Complete
