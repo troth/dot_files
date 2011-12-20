@@ -73,16 +73,6 @@ set completeopt=menuone,menu,longest,preview
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
-""" GNU indentation style.
-""augroup C
-""   autocmd BufRead *.c set cinoptions={.5s,:.5s,+.5s,t0,g0,^-2,e-2,n-2,p2s,(0,=.5s formatoptions=croql cindent shiftwidth=4 tabstop=8
-""augroup END
-
-" My modified GNU indentation style.
-"augroup C
-"   autocmd BufRead *.c set cinoptions=t0,p2s,(0, formatoptions=croql cindent shiftwidth=4 tabstop=8 comments=sl:/*,mb:\ ,elx:*/
-"augroup END
-
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
