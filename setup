@@ -16,13 +16,13 @@ do
 
     if [ -e ${lnk} ]
     then
-	if [ -L ${lnk} ]
-	then
-	    echo "skip: symlink exists:              ${lnk} "
-	else
-	    echo "skip: file exists (not a symlink): ${lnk}"
-	fi
-	continue
+        if [ -L ${lnk} ]
+        then
+            echo "skip: symlink exists:              ${lnk} "
+        else
+            echo "skip: file exists (not a symlink): ${lnk}"
+        fi
+        continue
     fi
 
     if [ -L ${lnk} ]
