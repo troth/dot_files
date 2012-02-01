@@ -1,3 +1,10 @@
+;;; Scons files are just python scriptlets.
+(setq auto-mode-alist
+ (cons '("SConstruct" . python-mode) auto-mode-alist))
+(setq auto-mode-alist
+ (cons '("SConscript" . python-mode) auto-mode-alist))
+
+
 ;;; Python-mode does play nice with CEDET. :-(
 ;;;(require 'pycomplete)
 ;(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
