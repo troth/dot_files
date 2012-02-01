@@ -27,6 +27,10 @@ set tabpagemax=15
 map <M-Left> <C-T>
 map <M-Right> <C-]>
 
+" F3 (incr) & F4 (decr) to resize current window in split windows.
+map <F3> <C-w>+
+map <F4> <C-w>-
+
 " Highlight extra white space at end of line.
 highlight WhiteSpaceEOL ctermbg=darkgreen guibg=lightgreen
 match WhiteSpaceEOL /\s\+$/
