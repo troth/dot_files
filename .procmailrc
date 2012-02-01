@@ -1,0 +1,85 @@
+##############################################################################
+#
+# variables
+#
+##############################################################################
+
+# Set on when debugging
+VERBOSE=on
+
+# Set a reduced path.
+PATH=/bin:/usr/bin:/usr/local/bin
+
+# Log stuff.  Set this early, as it only logs things after it is set.
+LOGFILE=${HOME}/.procmail/trash/procmail.log
+LOG="
+===============================================================================
+
+"
+
+# where everything goes that isn't explicitly sent elsewhere
+DEFAULT=${HOME}/.maildir/inbox
+
+YYMM=`date +%y%m`
+YYYY=`date +%Y`
+DAY=`date +%A`
+
+RESEND=${HOME}/.procmail/procmailrc.resend
+
+#
+# Regenerate 'From' lines to make sure they are valid.
+# These are stripped out by fetchmail when sending directly to procmail for
+# processing.
+#
+:0 fhw
+| formail -I "From " -a "From "
+
+##############################################################################
+#
+# CYA
+#
+##############################################################################
+
+# Save EVERYTHING in a trash mailbox.
+#:0 c:
+#${HOME}/.procmail/trash/mail.everything
+
+##############################################################################
+#
+# SPAM
+#
+##############################################################################
+
+#:0
+##* ^X-Spam-Level: \*\*\*\*\*
+#* ^X-Spam-Flag: YES
+#${HOME}/.maildir/spam
+
+##############################################################################
+#
+# lists
+#
+##############################################################################
+
+# lhn-eng-team-platform
+#:0 c:
+#* ^TO_lhn-eng-team-platform@hp\.com
+#${HOME}/.maildir/lhn-eng-team-platform/$YYMM
+
+##############################################################################
+#
+# remove dups
+#
+##############################################################################
+
+#:0 Wh: msgid.lock
+#| formail -D 32768 .maildir/.cache.msgid
+
+##############################################################################
+#
+# Log everything not handled so far.
+#
+##############################################################################
+
+#:0 c:
+#${HOME}/.maildir/monthly/$YYMM

@@ -1,0 +1,9 @@
+source ~/.mutt/colors
+source ~/.mutt/aliases
+source ~/.mutt/mailboxes
+source ~/.mutt/hooks
+source ~/.mutt/editor
+source ~/.mutt/mailing-lists
+
+# Local custumizations that are specific to the host/site.
+source ~/.mutt/muttrc.local
