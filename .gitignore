@@ -1,5 +1,5 @@
 .*.swp
-.vim/tags/cpp
-.vim/tags/cpp_src
-.vim/.netrwhist
-.mutt/*.local
+_vim/tags/cpp
+_vim/tags/cpp_src
+_vim/.netrwhist
+_mutt/*.local

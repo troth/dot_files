@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Script to setup dot files in $HOME from .* files/dirs in dot_files repo.
+# Script to setup dot files in $HOME from _* files/dirs in dot_files repo.
 #
 
 unalias ls
@@ -9,10 +9,10 @@ BASE="${PWD#${HOME}/}"
 
 cd $HOME
 
-for i in $(ls -A1 -I '[a-zA-Z]*' -I '.git*' -I '.#*' ${BASE})
+for tgt in ${BASE}/_*
 do
-    tgt="./${BASE}/$i"
-    lnk="$i"
+    lnk="$(basename ${tgt})"
+    lnk=".${lnk#_}"
 
     if [ -e ${lnk} ]
     then
@@ -23,6 +23,12 @@ do
 	    echo "skip: file exists (not a symlink): ${lnk}"
 	fi
 	continue
+    fi
+
+    if [ -L ${lnk} ]
+    then
+        echo "Removing broken link: ${lnk}"
+        rm ${lnk}
     fi
 
     echo ln -s ${tgt} ${lnk}
