@@ -1,2 +1,37 @@
 Emacs*Background: #EBE6E2
 !Emacs.font: Bitstream Vera Sans Mono-10
+
+XTerm*loginShell: true
+XTerm*renderFont: true
+XTerm*faceName: Droid Sans Mono
+XTerm*faceSize: 10
+XTerm*scrollBar: true
+XTerm*saveLines: 5000
+XTerm*background: #D8D8D8
+
+! Black
+XTerm*color0:  #000000
+XTerm*color8:  #555555
+! Red
+XTerm*color1:  #AA0000
+XTerm*color9:  #00AA00
+! Green
+XTerm*color2:  #00AA00
+XTerm*color10: #00AA00
+! Yellow
+XTerm*color3:  #AA5500
+XTerm*color11: #AA5500
+! Blue
+XTerm*color4:  #0000AA
+XTerm*color12: #5555FF
+! Magenta
+XTerm*color5:  #A800AA
+XTerm*color13: #EB55FF
+! Cyan
+XTerm*color6: #00AAAA
+XTerm*color7: #AAAAAA
+! White
+XTerm*color14: #00AAAA
+XTerm*color15: #FFFFFF
+
+XTerm*cursorColor: #868686
