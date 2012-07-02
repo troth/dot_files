@@ -1,0 +1,5 @@
+set folder="~/.maildir"     # default location of mailboxes
+set spoolfile=+inbox        # incoming mails (~/.maildir/inbox)
+
+mailboxes !
+mailboxes =Benefits

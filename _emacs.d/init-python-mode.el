@@ -1,3 +1,10 @@
+;;; Scons files are just python scriptlets.
+(setq auto-mode-alist
+ (cons '("SConstruct" . python-mode) auto-mode-alist))
+(setq auto-mode-alist
+ (cons '("SConscript" . python-mode) auto-mode-alist))
+
+
 ;;; Python-mode does play nice with CEDET. :-(
 ;;;(require 'pycomplete)
 ;(setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
@@ -15,6 +22,7 @@
   ;(setq indent-tabs-mode nil)
   ;(setq py-smart-indentation nil)
   ;(setq py-indent-offset 4)
-  ;(setq py-python-command "python"))
+  ;(setq py-python-command "python")
+  ;)
 
 ;(add-hook 'python-mode-hook 'my-python-hook)

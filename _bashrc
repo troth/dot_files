@@ -28,6 +28,7 @@ alias resh='source ~/.bash_profile'
 alias rm='rm -i'
 alias cp='cp -i'
 alias env='env | sort'
+alias gg='git grep -n'
 
 path ()
 {

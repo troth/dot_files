@@ -13,3 +13,4 @@ hardstatus alwayslastline "%-Lw%{+b kc}%50>%n%f* %t%{-}%+Lw%<"
 autodetach on
 defscrollback 5120
 
+shell -bash

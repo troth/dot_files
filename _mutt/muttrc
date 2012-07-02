@@ -1,0 +1,15 @@
+source ~/.mutt/colors
+source ~/.mutt/aliases.rc
+source ~/.mutt/mailboxes
+source ~/.mutt/hooks
+source ~/.mutt/editor
+source ~/.mutt/mailing-lists
+
+# Local custumizations that are specific to the host/site.
+source ~/.mutt/muttrc.local
+
+set pager_context = 5
+set pager_index_lines = 12
+set pager_stop = no
+set sort = threads
+set sort_aux = last-date

@@ -1,0 +1,44 @@
+# Color Settings.
+# From 'man muttrc':
+#   color object foreground background [  regexp ]
+#   color index foreground background [  pattern ]
+#   uncolor index pattern [ pattern ... ]
+#
+#          If  your  terminal supports color, these commands can be used to
+#          assign foreground/background combinations  to  certain  objects.
+#          Valid  objects  are: attachment, body, bold, header, hdrdefault,
+#          index, indicator, markers,  message,  normal,  quoted,  quotedN,
+#          search, signature, status, tilde, tree, underline.  The body and
+#          header objects allow you to restrict the colorization to a regu-
+#          lar  expression.  The index object permits you to select colored
+#          messages by pattern.
+#
+#          Valid colors include: white, black, green, magenta, blue,  cyan,
+#          yellow, red, default, colorN.
+#
+
+color attachment    brightyellow    white
+#color body
+#color bold
+#color header
+color hdrdefault    cyan            white
+color indicator     green           black
+color markers       brightred       white
+color message       black           white
+color normal        black           white
+color quoted        green           white
+#color quotedN
+color quoted1       green           white
+#color search
+color signature     cyan            white
+color status        white           black
+color tilde         blue            white
+color tree          red             white
+#color underline
+
+color index         green           white   ~N  # New
+color index         black           white   ~O  # Old
+color index         brightred       white  '~t root@.*'
+
+# Example of how to colorize based on FROM:
+#color index       magenta          white '~f foor@example.com'
