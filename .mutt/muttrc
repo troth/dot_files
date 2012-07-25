@@ -1,6 +1,0 @@
-source ~/.mutt/colors
-source ~/.mutt/aliases
-source ~/.mutt/mailboxes
-source ~/.mutt/hooks
-source ~/.mutt/editor
-source ~/.mutt/mailing-lists

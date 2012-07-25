@@ -1,4 +1,0 @@
-#set imap_keepalive = 900
-#set move = no # Stop asking to "move read messages to mbox".
-
-#source ~/.mutt/accounts/*
