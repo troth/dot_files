@@ -8,6 +8,7 @@ XTerm*faceSize: 10
 XTerm*scrollBar: true
 XTerm*saveLines: 5000
 XTerm*background: #D8D8D8
+XTerm*foreground: Black
 
 ! Black
 XTerm*color0:  #000000
