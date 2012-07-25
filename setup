@@ -3,7 +3,7 @@
 # Script to setup dot files in $HOME from _* files/dirs in dot_files repo.
 #
 
-unalias ls
+unalias ls 2>/dev/null
 
 BASE="${PWD#${HOME}/}"
 
