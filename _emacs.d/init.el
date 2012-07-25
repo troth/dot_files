@@ -12,6 +12,7 @@
 ;;; Mode customizations.
 (load "init-cedet")
 (load "init-ecb")
+(load "init-speedbar")
 (load "init-asm-mode")
 (load "init-c-mode")
 (load "init-python-mode")
