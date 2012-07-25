@@ -15,24 +15,30 @@ if [ -e ~/.xenvironment ]; then
 	. ~/.xenvironment
 fi
 
+# This makes it easier to deal with schroot which shares the $HOME dir in chroots.
+OS_REL=$(lsb_release -irs | tr '\n' ' ' | tr ' ' '-' | sed -e 's/-$//')
+export OS_REL
+
 # Add things that are usually only in root's path.
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/sbin
 PATH=$PATH:/sbin
 
 # Add all my home paths one at a time so that they are easy to comment out.
-PATH=$PATH:$HOME/local/bin
+PATH=$PATH:$HOME/local-${OS_REL}/bin
+#PATH=$PATH:$HOME/local/bin
 PATH=$PATH:$HOME/bin
-PATH=$HOME/local/emacs/bin:$PATH
+PATH=$HOME/local-${OS_REL}/emacs/bin:$PATH
 
 export PATH
 
 MANPATH=$MANPATH:$HOME/man
-MANPATH=$MANPATH:$HOME/local/man
+MANPATH=$MANPATH:$HOME/local-${OS_REL}/man
+#MANPATH=$MANPATH:$HOME/local/man
 
 export MANPATH
 
-MY_LD_LIB_PATH=$HOME/local/lib
+MY_LD_LIB_PATH=$HOME/local-${OS_REL}/lib
 
 export LD_LIBRARY_PATH=$MY_LD_LIB_PATH
 
@@ -46,9 +52,6 @@ if [ -e $HOME/bin/setprompt ]
 then
 	. $HOME/bin/setprompt
 fi
-
-OS_REL=$(lsb_release -irs | tr '\n' ' ' | tr ' ' '-' | sed -e 's/-$//')
-export OS_REL
 
 PS1='\n\[\033[32m\]### \[\033[34m\][\T \D{%P}]\[\033[36m\][${OS_REL}]$(__git_ps1 "\[\033[31m\] Branch: %s")\n\[\033[32m\]### [\u@\h:\w]\[\033[0m\]\n>--> \$ '
 
