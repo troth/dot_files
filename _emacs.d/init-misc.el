@@ -1,5 +1,9 @@
 (set-background-color "#EBE6E2")
 
+(set-default-font "Monospace-8")
+
+(require 'whitespace)
+
 ;;; Disable the annoying splash screen.
 (setq inhibit-startup-message t)
 
