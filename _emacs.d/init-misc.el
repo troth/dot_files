@@ -75,3 +75,8 @@
 ;;; (add-hook 'emacs-lisp-mode-hook 'turn-on-font-lock)
 ;(global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
+
+;;; Tell emacs where to put values set with the 'customize' commands. By default
+;;; they go into ~/.emacs.d/init.el.
+(setq custom-file "~/.emacs.d/init-custom.el")
+(load custom-file)
