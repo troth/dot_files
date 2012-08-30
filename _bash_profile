@@ -19,26 +19,38 @@ fi
 OS_REL=$(lsb_release -irs | tr '\n' ' ' | tr ' ' '-' | sed -e 's/-$//')
 export OS_REL
 
+unset PATH
+
+PATH=/usr/local/bin:/usr/bin:/bin
+
 # Add things that are usually only in root's path.
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/sbin
 PATH=$PATH:/sbin
 
 # Add all my home paths one at a time so that they are easy to comment out.
-PATH=$PATH:$HOME/local-${OS_REL}/bin
-#PATH=$PATH:$HOME/local/bin
 PATH=$PATH:$HOME/bin
-PATH=$HOME/local-${OS_REL}/emacs/bin:$PATH
+if [ -d $HOME/local/${OS_REL}/bin ]; then
+    PATH=$PATH:$HOME/local/${OS_REL}/bin
+fi
+if [ -d $HOME/local/bin ]; then
+    PATH=$PATH:$HOME/local/bin
+fi
+if [ -d $HOME/local/${OS_REL}/emacs/bin ]; then
+    PATH=$HOME/local/${OS_REL}/emacs/bin:$PATH
+fi
 
 export PATH
 
 MANPATH=$MANPATH:$HOME/man
-MANPATH=$MANPATH:$HOME/local-${OS_REL}/man
+MANPATH=$MANPATH:$HOME/local/${OS_REL}/man
 #MANPATH=$MANPATH:$HOME/local/man
 
 export MANPATH
 
-MY_LD_LIB_PATH=$HOME/local-${OS_REL}/lib
+if [ -d $HOME/local/${OS_REL}/lib ]; then
+    MY_LD_LIB_PATH=$HOME/local/${OS_REL}/lib
+fi
 
 export LD_LIBRARY_PATH=$MY_LD_LIB_PATH
 
