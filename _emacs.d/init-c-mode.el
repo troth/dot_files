@@ -1,3 +1,5 @@
+(require 'doxymacs)
+
 (defun my-c-mode-common-hook ()
   ;; my customizations for all of c-mode and related modes
   (setq c-echo-syntactic-information-p 1)
@@ -17,6 +19,12 @@
 )
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+(add-hook 'c-mode-common-hook 'doxymacs-mode)
+
+(defun my-doxymacs-font-lock-hook ()
+  (if (or (eq major-mode 'c-mode) (eq major-mode 'c++-mode))
+    (doxymacs-font-lock)))
+(add-hook 'font-lock-mode-hook 'my-doxymacs-font-lock-hook)
 
 ;; (defun c-new-func (ret-type func args)
 ;;   "Insert a new C function definition into current buffer."
