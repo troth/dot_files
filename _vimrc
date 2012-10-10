@@ -23,6 +23,9 @@ set ruler		" show the cursor position all the time
 "nnoremap <silent> <C-p> :tabprevious<CR>
 set tabpagemax=15
 
+"Set paste mode so pasting into a buffer does not go crazy with auto indent
+set paste
+
 " Alt-right/left to navigate forward/backward in the tags stack
 map <M-Left> <C-T>
 map <M-Right> <C-]>
