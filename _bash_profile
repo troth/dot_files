@@ -73,8 +73,18 @@ if [ -f ~/.bash_profile_local ]; then
 fi
 
 # Set up ccache if it is installed.
-if [ -d /usr/lib/ccache ] && [ -x /usr/lib/ccache/gcc ]
-then
-    PATH=/usr/lib/ccache:$PATH
-    export PATH
-fi
+LIB_DIRS=(
+    /usr/lib
+    /usr/lib64
+    /usr/lib32
+)
+
+for LIB in ${LIB_DIRS[@]}
+do
+    if [ -d ${LIB}/ccache ] && [ -x ${LIB}/ccache/gcc ]
+    then
+        PATH=${LIB}/ccache:$PATH
+        export PATH
+        break
+    fi
+done
