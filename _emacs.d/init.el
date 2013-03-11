@@ -17,6 +17,7 @@
 (load "init-c-mode")
 (load "init-python-mode")
 (load "init-cmake-mode")
+(load "init-shell-mode")
 ;;(load "init-auto-complete")
 
 ;;; Customize key mappings.
