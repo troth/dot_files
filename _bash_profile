@@ -92,6 +92,8 @@ __env_ps1 ()
 
 PS1='\n$(_GRN_)### $(_BLU_)[\T \D{%P}]$(_CYN_)[${OS_REL}]$(__git_ps1 "$(_RED_) Branch: %s")\n$(_GRN_)### [\u@\h:\w]$(_BLK_)\n$(__env_ps1)>--> \$ '
 
+export PS1
+
 # Load a local profile if it exists
 if [ -f ~/.bash_profile_local ]; then
 	. ~/.bash_profile_local
@@ -113,3 +115,5 @@ do
         break
     fi
 done
+
+${ENV_YOCTO_INIT}
