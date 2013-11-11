@@ -16,7 +16,8 @@ if [ -e ~/.xenvironment ]; then
 	. ~/.xenvironment
 fi
 
-# This makes it easier to deal with schroot which shares the $HOME dir in chroots.
+# This makes it easier to deal with schroot which shares the $HOME dir
+# in chroots.
 OS_REL=$(lsb_release -irs | tr '\n' ' ' | tr ' ' '-' | sed -e 's/-$//')
 export OS_REL
 
@@ -29,7 +30,8 @@ PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/sbin
 PATH=$PATH:/sbin
 
-# Add all my home paths one at a time so that they are easy to comment out.
+# Add all my home paths one at a time so that they are easy to comment
+# out.
 PATH=$PATH:$HOME/bin
 if [ -d $HOME/local/${OS_REL}/bin ]; then
     PATH=$PATH:$HOME/local/${OS_REL}/bin
@@ -90,7 +92,7 @@ __env_ps1 ()
     fi
 }
 
-PS1='\n$(_GRN_)### $(_BLU_)[\T \D{%P}]$(_CYN_)[${OS_REL}]$(__git_ps1 "$(_RED_) Branch: %s")\n$(_GRN_)### [\u@\h:\w]$(_BLK_)\n$(__env_ps1)>--> \$ '
+PS1='\n$(_GRN_)### $(__env_ps1)$(_BLU_)[\T \D{%P}]$(_CYN_)[${OS_REL}]$(__git_ps1 "$(_RED_) Branch: %s")\n$(_GRN_)### [\u@\h:\w]$(_BLK_)\n>--> \$ '
 
 export PS1
 
