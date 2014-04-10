@@ -1,4 +1,5 @@
 (require 'doxymacs)
+(require 'xcscope)
 
 (defun my-c-mode-common-hook ()
   ;; my customizations for all of c-mode and related modes
