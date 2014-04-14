@@ -1,6 +1,10 @@
-(set-background-color "#EBE6E2")
+(add-to-list 'default-frame-alist '(background-color . "#EBE6E2"))
+(add-to-list 'default-frame-alist '(foreground-color . "black"))
 
-(set-default-font "Monospace-8")
+(add-to-list 'default-frame-alist '(font . "Monospace-8"))
+
+(add-to-list 'default-frame-alist '(height . 60))
+(add-to-list 'default-frame-alist '(width . 100))
 
 (require 'whitespace)
 
