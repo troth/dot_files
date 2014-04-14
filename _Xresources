@@ -1,6 +1,3 @@
-Emacs*Background: #EBE6E2
-!Emacs.font: Bitstream Vera Sans Mono-10
-
 XTerm*loginShell: true
 XTerm*renderFont: true
 XTerm*faceName: Droid Sans Mono
