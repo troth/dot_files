@@ -61,11 +61,6 @@ RESEND=${HOME}/.procmail/procmailrc.resend
 #
 ##############################################################################
 
-# lhn-eng-team-platform
-#:0 c:
-#* ^TO_lhn-eng-team-platform@hp\.com
-#${HOME}/.maildir/lhn-eng-team-platform/$YYMM
-
 ##############################################################################
 #
 # remove dups
