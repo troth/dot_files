@@ -80,3 +80,13 @@
 ;;; they go into ~/.emacs.d/init.el.
 (setq custom-file "~/.emacs.d/init-custom.el")
 (load custom-file)
+
+;;; Add a function and key binding to cycle through 2, 4 and 8 tab-widths.
+(defun toggle-tab-width ()
+  "Cycle tab-width between values 2, 4, and 8."
+  (interactive)
+  (setq tab-width
+	(cond ((eq tab-width 8) 2)
+	      ((eq tab-width 2) 4)
+	      (t 8)))
+  (redraw-display))
