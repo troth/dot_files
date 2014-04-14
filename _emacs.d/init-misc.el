@@ -65,10 +65,6 @@
 ;;; Stop compile command from using "make -k"
 (setq compile-command "make")
 
-;;; Tab width / tab stops / fill column
-(setq tab-width 4)
-(setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 80
-					  88 96 104 112 120 124 128 132))
 (setq fill-column 78)
 
 ;;; Turn on font-lock-mode automatically for all modes
