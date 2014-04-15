@@ -8,7 +8,7 @@
 ;; IMPORTANT: For Emacs >= 23.2, you must place this *before* any
 ;; CEDET component (including EIEIO) gets activated by another
 ;; package (Gnus, auth-source, ...).
-(load-file "~/.emacs.d/site-el/cedet/common/cedet.el")
+;(load-file "~/.emacs.d/site-el/cedet/common/cedet.el")
 
 ;; Enable EDE (Project Management) features
 ;(global-ede-mode 1)
@@ -21,11 +21,11 @@
 ;; Select one of the following:
 
 ;; * This enables the database and idle reparse engines
-(semantic-load-enable-minimum-features)
+;(semantic-load-enable-minimum-features)
 
 ;; * This enables some tools useful for coding, such as summary mode,
 ;;   imenu support, and the semantic navigator
-(semantic-load-enable-code-helpers)
+;(semantic-load-enable-code-helpers)
 
 ;; * This enables even more coding tools such as intellisense mode,
 ;;   decoration mode, and stickyfunc mode (plus regular code helpers)
