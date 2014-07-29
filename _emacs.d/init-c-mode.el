@@ -30,6 +30,10 @@
   ;; my customizations for all of c-mode and related modes
   (setq c-echo-syntactic-information-p 1)
   (setq c-tab-always-indent t)
+  (setq cscope-option-use-inverted-index t)
+  (setq cscope-option-do-not-update-database t)
+  (setq cscope-use-relative-paths t)
+  (setq cscope-index-recursively nil)
   ;;;(setq c-font-lock-extra-types 
   ;;; (quote ("FILE" "\\sw+_t" "\\sw+_T" "byte" "word" "dword" "qword")))
   ;; other customizations can go here
