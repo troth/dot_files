@@ -90,3 +90,6 @@
 	      ((eq tab-width 2) 4)
 	      (t 8)))
   (redraw-display))
+
+;(require 'idutils)
+(autoload 'gid "idutils" "run idutils' gid command" t)
