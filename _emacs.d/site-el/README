@@ -1,0 +1,5 @@
+Need to manually add a few things from various external git repos.
+
+ECB::
+
+    $ git clone git://github.com/alexott/ecb.git
