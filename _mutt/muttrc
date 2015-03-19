@@ -13,3 +13,6 @@ set pager_index_lines = 12
 set pager_stop = no
 set sort = threads
 set sort_aux = last-date
+
+# For sending Linux patches.
+set send_charset="us-ascii:utf-8"
