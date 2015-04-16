@@ -89,6 +89,12 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Monospace\ 8
+  endif
+endif
+
 if has("autocmd")
  augroup cprog
   " Remove all cprog autocommands
