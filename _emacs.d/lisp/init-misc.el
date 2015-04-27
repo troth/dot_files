@@ -78,7 +78,7 @@
 
 ;;; Tell emacs where to put values set with the 'customize' commands. By default
 ;;; they go into ~/.emacs.d/init.el.
-(setq custom-file "~/.emacs.d/init-custom.el")
+(setq custom-file "~/.emacs.d/lisp/init-custom.el")
 (load custom-file)
 
 ;;; Add a function and key binding to cycle through 2, 4 and 8 tab-widths.

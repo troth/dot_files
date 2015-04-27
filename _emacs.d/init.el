@@ -2,8 +2,8 @@
 ;;; Emacs init file for Theodore A. Roth
 ;;;
 
-(setq load-path (cons "~/.emacs.d" load-path))
-(setq load-path (cons "~/.emacs.d/site-el" load-path))
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(add-to-list 'load-path "~/.emacs.d/site-el")
 
 (load "init-misc")
 (load "init-scroll")
