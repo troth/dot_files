@@ -3,7 +3,7 @@
 ;;;
 
 ;;; Put the speedbar on the left side.
-(setq sr-speedbar-right-side nil)
+;(setq sr-speedbar-right-side nil)
 
 ;;; Usage:
 ;;;
@@ -34,4 +34,4 @@
 ;;;    “sr-speedbar-refresh-toggle”
 ;;;
 ;;;    Toggle refresh speedbar content.
-(require 'sr-speedbar)
+;(require 'sr-speedbar)

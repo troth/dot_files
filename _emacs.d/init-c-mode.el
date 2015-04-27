@@ -1,4 +1,4 @@
-(require 'doxymacs)
+;;(require 'doxymacs)  ;; Not in Debian 8 due to outstanding bugs.
 (require 'xcscope)
 
 ;; Create my personal style. Inherits from 'gnu' style.
