@@ -1,3 +1,11 @@
+;; first window settings
+(setq initial-frame-alist
+      '(
+        (width . 100)
+        (height . 60)
+        (background-color . "#EBE6E2")
+        ))
+
 (add-to-list 'default-frame-alist '(background-color . "#EBE6E2"))
 (add-to-list 'default-frame-alist '(foreground-color . "black"))
 
