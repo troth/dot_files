@@ -1,0 +1,20 @@
+[color]
+	ui = auto
+[alias]
+	stat = status
+	st = status
+	br = branch
+	co = checkout
+	ci = commit
+[grep]
+	lineNumber = true
+[merge]
+	tool = kdiff3
+[mergetool]
+	keepBackup = false
+[mergetool "kdiff3"]
+	cmd = /usr/bin/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED
+	trustExitCode = false
+[include]
+	path = ~/.gitconfig-user
+	path = ~/.gitconfig-local
