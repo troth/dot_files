@@ -5,7 +5,7 @@
 	st = status
 	br = branch
 	co = checkout
-	ci = commit
+	ci = commit -s
 [grep]
 	lineNumber = true
 [merge]
@@ -15,6 +15,10 @@
 [mergetool "kdiff3"]
 	cmd = /usr/bin/kdiff3 $BASE $LOCAL $REMOTE -o $MERGED
 	trustExitCode = false
+[diff]
+	tool = kdiff3
+[difftool "kdiff3"]
+	cmd = /usr/bin/kdiff3 $LOCAL $REMOTE
 [include]
 	path = ~/.gitconfig-user
 	path = ~/.gitconfig-local
