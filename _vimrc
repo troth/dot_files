@@ -4,6 +4,10 @@
 """ $Id: .vimrc,v 1.6 2001/12/10 21:14:48 troth Exp $
 """
 
+""" Put all .*.swp files in ~/.vim/tmp
+""" This is useful for openwrt to avoid swap files from getting into images.
+"set directory^=$HOME/.vim/tmp//
+
 filetype plugin indent on
 
 set nocompatible	" Use Vim defaults (much better!)
@@ -15,7 +19,7 @@ set noai		" always set autoindenting on
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 
-"set expandtab           " insert spaces instead of tabs
+set expandtab           " insert spaces instead of tabs
 
 "Map C-n to tabnext and C-p ro tabprevious.
 "" These aren't needed - C-PageUp/C-PageDown work the same.
