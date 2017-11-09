@@ -17,6 +17,7 @@
 	trustExitCode = false
 [diff]
 	tool = kdiff3
+	renames = copies
 [difftool "kdiff3"]
 	cmd = /usr/bin/kdiff3 $LOCAL $REMOTE
 [include]
