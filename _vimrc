@@ -30,6 +30,10 @@ set tabpagemax=15
 "Set paste mode so pasting into a buffer does not go crazy with auto indent
 set paste
 
+"Configure spelling checks
+set spelllang=en
+set spellfile=$HOME/.vim/spell/en.utf-8.add
+
 " Alt-right/left to navigate forward/backward in the tags stack
 map <M-Left> <C-T>
 map <M-Right> <C-]>
