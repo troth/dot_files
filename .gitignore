@@ -5,3 +5,7 @@ _vim/.netrwhist
 _vim/spell/en.utf-8.add.spl
 _mutt/*.local
 _mutt/cache
+
+__pycache__
+*.pyc
+*.pyo
