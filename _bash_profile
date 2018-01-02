@@ -120,4 +120,11 @@ do
     fi
 done
 
+# Start up an ssh-agent if not already available in this shell instance.
+# Do not add keys until needed.
+if [ -z "${SSH_AGENT_PID}" ]
+then
+    eval $(ssh-agent)
+fi
+
 ${ENV_YOCTO_INIT}
