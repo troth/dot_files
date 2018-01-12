@@ -8,29 +8,29 @@
 
 filetype plugin indent on
 
-set nocompatible	" Use Vim defaults (much better!)
-set bs=2		" allow backspacing over everything in insert mode
-set noai		" always set autoindenting on
-"set backup		" keep a backup file
+set nocompatible        " Use Vim defaults (much better!)
+set bs=2                " allow backspacing over everything in insert mode
+set noai                " always set autoindenting on
+"set backup             " keep a backup file
 "set noundofile         " do not create '.<file>.un~' files
 "set noswapfile         " do not use swap files
-"set viminfo='20,\"50	" read/write a .viminfo file, don't store more
-			" than 50 lines of registers
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
+"set viminfo='20,\"50   " read/write a .viminfo file, don't store more
+                        " than 50 lines of registers
+set history=50          " keep 50 lines of command line history
+set ruler               " show the cursor position all the time
 
 set expandtab           " insert spaces instead of tabs
 
-"Map C-n to tabnext and C-p ro tabprevious.
+" Map C-n to tabnext and C-p ro tabprevious.
 " These aren't needed - C-PageUp/C-PageDown work the same.
 "nnoremap <silent> <C-n> :tabnext<CR>
 "nnoremap <silent> <C-p> :tabprevious<CR>
 set tabpagemax=15
 
-"Set paste mode so pasting into a buffer does not go crazy with auto indent
+" Set paste mode so pasting into a buffer does not go crazy with auto indent
 set paste
 
-"Configure spelling checks
+" Configure spelling checks
 set spelllang=en
 set spellfile=$HOME/.vim/spell/en.utf-8.add
 
@@ -185,12 +185,12 @@ if version >= 500
 
 	" Set up Function-Key-1 to run the function. <F1> normally
 	" invokes help, but you can still get to that vi :help.
-	" unmap <F4>
-	" map <F4> :TG<cr>
+	"unmap <F4>
+	"map <F4> :TG<cr>
 
 	" Allow this to work in insert mode too.
-	" unmap! <F4>
-	" map! <F4> <esc>:TG<cr>li
+	"unmap! <F4>
+	"map! <F4> <esc>:TG<cr>li
 
 	" Turn off a search highlight
 	"unmap <F5>
@@ -256,7 +256,7 @@ if version >= 500
 	"hi Error          term=reverse  cterm=bold  ctermfg=7  ctermbg=1
 	"hi Todo           term=standout  ctermfg=0  ctermbg=3
 	"hi String         links to Constant
-    "hi String         cterm=NONE ctermfg=DarkRed gui=NONE guifg=DarkRed
+	"hi String         cterm=NONE ctermfg=DarkRed gui=NONE guifg=DarkRed
 	"hi Character      links to Constant
 	"hi Number         links to Constant
 	"hi Boolean        links to Constant
@@ -280,5 +280,4 @@ if version >= 500
 	"hi Delimiter      links to Special
 	"hi SpecialComment links to Special
 	"hi Debug          links to Special
-
 endif
