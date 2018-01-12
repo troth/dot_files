@@ -22,7 +22,7 @@ set ruler		" show the cursor position all the time
 set expandtab           " insert spaces instead of tabs
 
 "Map C-n to tabnext and C-p ro tabprevious.
-"" These aren't needed - C-PageUp/C-PageDown work the same.
+" These aren't needed - C-PageUp/C-PageDown work the same.
 "nnoremap <silent> <C-n> :tabnext<CR>
 "nnoremap <silent> <C-p> :tabprevious<CR>
 set tabpagemax=15
@@ -55,7 +55,7 @@ if has("autocmd")
   "autocmd BufReadPost * if line("'\"") | exe "'\"" | endif
 endif
 
-"" Stop SuperTab from hijacking the tab key.
+" Stop SuperTab from hijacking the tab key.
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
 "let g:SuperTabMappingTabLiteral = '<c-tab>'
@@ -147,7 +147,7 @@ if &term=="xterm"
      set t_Sf=^[3%dm
 endif
 
-" some extra commands for HTML editing
+" Some extra commands for HTML editing
 nmap ,mh wbgueyei<<ESC>ea></<ESC>pa><ESC>bba
 nmap ,h1 _i<h1><ESC>A</h1><ESC>
 nmap ,h2 _i<h2><ESC>A</h2><ESC>
@@ -168,7 +168,7 @@ if version >= 500
 	" This will force expanding of tabs into appropriate number of spaces.
 	set expandtab
 
-	" define a function for cycling the tabstops from 2 -> 4 -> 8 -> 2
+	" Define a function for cycling the tabstops from 2 -> 4 -> 8 -> 2
 	set ts=4 sw=4
 	"function Toggle_Tab_Width()
 	"	if &ts == 2
@@ -180,10 +180,10 @@ if version >= 500
 	"	endif
 	"endfunction
 
-	" call the funciton via the ex style command ':TG<ret>'
+	" Call the funciton via the ex style command ':TG<ret>'
 	"command TG call Toggle_Tab_Width()
 
-	" set up Function-Key-1 to run the function. <F1> normally
+	" Set up Function-Key-1 to run the function. <F1> normally
 	" invokes help, but you can still get to that vi :help.
 	" unmap <F4>
 	" map <F4> :TG<cr>
@@ -192,7 +192,7 @@ if version >= 500
 	" unmap! <F4>
 	" map! <F4> <esc>:TG<cr>li
 
-	" turn off a search highlight
+	" Turn off a search highlight
 	"unmap <F5>
 	map <F5> :nohl<cr>
 
