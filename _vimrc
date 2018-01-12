@@ -1,8 +1,6 @@
 """
 """ .vimrc file for troth account
 """
-""" $Id: .vimrc,v 1.6 2001/12/10 21:14:48 troth Exp $
-"""
 
 """ Put all .*.swp files in ~/.vim/tmp
 """ This is useful for openwrt to avoid swap files from getting into images.
