@@ -1,33 +1,3 @@
 #!/bin/bash
 
-cat >~/.config/xfce4/terminal/terminalrc <<EOF
-[Configuration]
-ColorForeground=#000000000000
-ColorBackground=#cccccccccccc
-ColorCursor=#0f0f49499999
-ColorSelection=#6d6d9696b7b7
-ColorSelectionUseDefault=FALSE
-ColorPalette=#000000000000;#aaaa00000000;#4444aaaa4444;#aaaa55550000;#00003939aaaa;#aaaa2222aaaa;#1a1a9292aaaa;#aaaaaaaaaaaa;#777777777777;#959500000000;#3c3c95953c3c;#95954b4b0000;#000030309090;#90901d1d9090;#161679798d8d;#ffffffffffff
-CommandLoginShell=TRUE
-FontName=DejaVu Sans Mono 9
-MiscAlwaysShowTabs=FALSE
-MiscBell=FALSE
-MiscBordersDefault=TRUE
-MiscCursorBlinks=FALSE
-MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
-MiscDefaultGeometry=120x65
-MiscInheritGeometry=FALSE
-MiscMenubarDefault=TRUE
-MiscMouseAutohide=FALSE
-MiscToolbarDefault=FALSE
-MiscConfirmClose=TRUE
-MiscCycleTabs=TRUE
-MiscTabCloseButtons=TRUE
-MiscTabCloseMiddleClick=TRUE
-MiscTabPosition=GTK_POS_TOP
-MiscHighlightUrls=TRUE
-MiscScrollAlternateScreen=TRUE
-TabActivityColor=#0f0f49499999
-ScrollingLines=20000
-TitleMode=TERMINAL_TITLE_REPLACE
-EOF
+cp terminalrc ~/.config/xfce4/terminal/terminalrc
