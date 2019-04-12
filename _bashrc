@@ -33,7 +33,7 @@ alias gg='git grep -n'
 
 path ()
 {
-	(IFS=":"; for p in $PATH; do echo $p; done)
+    echo "${PATH//:/$'\n'}"
 }
 
 # Function to add a dir to the end of PATH unless arg2 is "front"
