@@ -11,6 +11,6 @@ caption always "%{= ck}%H.potager > %t  %= %Y-%m-%d | %c"
 hardstatus alwayslastline "%-Lw%{+b kc}%50>%n%f* %t%{-}%+Lw%<"
 
 autodetach on
-defscrollback 5120
+defscrollback 15120
 
 shell -bash
