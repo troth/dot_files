@@ -120,4 +120,23 @@ do
     fi
 done
 
+#
+# Setup common downloads and sstate directories to be shared by all Yocto/OE
+# builds.
+#
+
+mkdir -p "$HOME/Yocto-Downloads"
+export DL_DIR="$HOME/Yocto-Downloads"
+
+mkdir -p "$HOME/Yocto-SState"
+export SSTATE_DIR="$HOME/Yocto-SState"
+
+# Variables we need bitbake to get from environment.
+TROTH_EXTRAWHITE=(
+    DL_DIR
+    SSTATE_DIR
+)
+
+export BB_ENV_EXTRAWHITE="${BB_ENV_EXTRAWHITE} ${TROTH_EXTRAWHITE[@]}"
+
 ${ENV_YOCTO_INIT}
