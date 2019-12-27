@@ -23,3 +23,5 @@
 [include]
 	path = ~/.gitconfig-user
 	path = ~/.gitconfig-local
+[core]
+	hooksPath = ~/.githooks
