@@ -131,10 +131,14 @@ export DL_DIR="$HOME/Yocto/Downloads"
 mkdir -p "$HOME/Yocto/SState"
 export SSTATE_DIR="$HOME/Yocto/SState"
 
+mkdir -p "$HOME/Yocto/HashEq"
+export HASH_EQ_DIR="$HOME/Yocto/HashEq"
+
 # Variables we need bitbake to get from environment.
 TROTH_EXTRAWHITE=(
     DL_DIR
     SSTATE_DIR
+    HASH_EQ_DIR
 )
 
 export BB_ENV_EXTRAWHITE="${BB_ENV_EXTRAWHITE} ${TROTH_EXTRAWHITE[@]}"
