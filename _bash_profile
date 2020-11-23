@@ -125,11 +125,11 @@ done
 # builds.
 #
 
-mkdir -p "$HOME/Yocto-Downloads"
-export DL_DIR="$HOME/Yocto-Downloads"
+mkdir -p "$HOME/Yocto/Downloads"
+export DL_DIR="$HOME/Yocto/Downloads"
 
-mkdir -p "$HOME/Yocto-SState"
-export SSTATE_DIR="$HOME/Yocto-SState"
+mkdir -p "$HOME/Yocto/SState"
+export SSTATE_DIR="$HOME/Yocto/SState"
 
 # Variables we need bitbake to get from environment.
 TROTH_EXTRAWHITE=(
