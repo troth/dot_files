@@ -32,16 +32,31 @@ PATH=$PATH:/sbin
 
 # Add all my home paths one at a time so that they are easy to comment
 # out.
-PATH=$PATH:$HOME/bin
-if [ -d $HOME/local/${OS_REL}/bin ]; then
-    PATH=$PATH:$HOME/local/${OS_REL}/bin
-fi
-if [ -d $HOME/local/bin ]; then
-    PATH=$PATH:$HOME/local/bin
-fi
-if [ -d $HOME/local/${OS_REL}/emacs/bin ]; then
-    PATH=$HOME/local/${OS_REL}/emacs/bin:$PATH
-fi
+HOME_PATHS_PREPEND=(
+    ${HOME}/local/${OS_REL}/emacs/bin
+)
+HOME_PATHS_APPEND=(
+    ${HOME}/local/${OS_REL}/bin
+    ${HOME}/local/bin
+    ${HOME}/.local/bin
+    ${HOME}/AppImages
+    ${HOME}/.platformio/penv/bin
+    ${HOME}/bin
+)
+
+for p in "${HOME_PATHS_PREPEND[@]}"
+do
+    if [ -d "${p}" ]; then
+        PATH="${p}:$PATH"
+    fi
+done
+
+for p in "${HOME_PATHS_APPEND[@]}"
+do
+    if [ -d "${p}" ]; then
+        PATH="$PATH:${p}"
+    fi
+done
 
 export PATH
 
