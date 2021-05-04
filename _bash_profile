@@ -80,36 +80,73 @@ export LC_COLLATE=C
 
 export CSCOPE_EDITOR="$HOME/bin/emacsclient-nowait"
 
+#
+# See man pages for tput(1) and terminfo(5)
+# See also: https://wiki.archlinux.org/title/Bash/Prompt_customization
+#
 _BLK_ ()
 {
-    printf -- "\033[0m"
+    printf -- "\001$(tput setaf 0)\002"
 }
+
 _RED_ ()
 {
-    printf -- "\033[31m"
+    printf -- "\001$(tput setaf 1)\002"
 }
+
 _GRN_ ()
 {
-    printf -- "\033[32m"
+    printf -- "\001$(tput setaf 2)\002"
 }
+
+_YEL_ ()
+{
+    printf -- "\001$(tput setaf 3)\002"
+}
+
 _BLU_ ()
 {
-    printf -- "\033[34m"
+    printf -- "\001$(tput setaf 4)\002"
 }
+
+_MAG_ ()
+{
+    printf -- "\001$(tput setaf 5)\002"
+}
+
 _CYN_ ()
 {
-    printf -- "\033[36m"
+    printf -- "\001$(tput setaf 6)\002"
+}
+
+_WHT_ ()
+{
+    printf -- "\001$(tput setaf 7)\002"
+}
+
+_RESET_ ()
+{
+    printf -- "\001$(tput sgr0)\002"
 }
 
 __env_ps1 ()
 {
     if [ -n "${ENV_PROMPT}" ]
     then
-        printf "$(_RED_)[${ENV_PROMPT}]$(_BLK_) "
+        printf -- "$(_RED_)[${ENV_PROMPT}]$(_BLK_)"
     fi
 }
 
-PS1='\n$(_GRN_)### $(__env_ps1)$(_BLU_)[\T \D{%P}]$(_CYN_)[${OS_REL}]$(__git_ps1 "$(_RED_) Branch: %s")\n$(_GRN_)### [\u@\h:\w]$(_BLK_)\n>--> \$ '
+PS1='\n\
+$(_GRN_)### \
+$(__env_ps1)\
+$(_BLU_)[\T \D{%P}]\
+$(_CYN_)[${OS_REL}]\
+$(__git_ps1 "$(_RED_) Branch: %s")\
+\n\
+$(_GRN_)### [\u@\h:\w]$(_RESET_)\
+\n\
+>--> \$ '
 
 export PS1
 
