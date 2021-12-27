@@ -38,3 +38,5 @@ done
 set -x
 mkdir -p ~/.config/kitty
 ln -sf ../../${BASE}/kitty.conf ~/.config/kitty/kitty.conf
+
+ln -sf ../${BASE}/nvim ~/.config/nvim
