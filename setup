@@ -34,3 +34,7 @@ do
     echo ln -s ${tgt} ${lnk}
     ln -s ${tgt} ${lnk}
 done
+
+set -x
+mkdir -p ~/.config/kitty
+ln -sf ../../${BASE}/kitty.conf ~/.config/kitty/kitty.conf
