@@ -9,10 +9,9 @@ BASE="${PWD#${HOME}/}"
 
 cd $HOME
 
-for tgt in ${BASE}/_*
-do
-    lnk="$(basename ${tgt})"
-    lnk=".${lnk#_}"
+function create_link() {
+    tgt=$1
+    lnk=$2
 
     if [ -e ${lnk} ]
     then
@@ -22,21 +21,32 @@ do
         else
             echo "skip: file exists (not a symlink): ${lnk}"
         fi
-        continue
+        return 1
     fi
 
     if [ -L ${lnk} ]
     then
-        echo "Removing broken link: ${lnk}"
+        # When `-e` fails and `-L` succeeds, the symlink is broken.
+        echo "Rmoving broken link:               ${lnk}"
         rm ${lnk}
     fi
 
     echo ln -s ${tgt} ${lnk}
     ln -s ${tgt} ${lnk}
+}
+
+for tgt in ${BASE}/_*
+do
+    lnk="$(basename ${tgt})"
+    lnk=".${lnk#_}"
+
+    create_link ${tgt} ${lnk}
 done
 
-set -x
-mkdir -p ~/.config/kitty
-ln -sf ../../${BASE}/kitty.conf ~/.config/kitty/kitty.conf
+for tgt in ${BASE}/cfg_*
+do
+    lnk="$(basename ${tgt})"
+    lnk=".config/${lnk#cfg_}"
 
-ln -sf ../${BASE}/nvim ~/.config/nvim
+    create_link ../${tgt} ${lnk}
+done
