@@ -1,6 +1,14 @@
 #!/bin/bash
 #
-# Script to setup dot files in $HOME from _* files/dirs in dot_files repo.
+# Script to setup dot files in $HOME.
+#
+# There are two mechanisms for creating the symlinks:
+#
+#   * For files/dirs matching '_*', a symlink ('.*') is created int '$HOME'
+#     pointing back into this git repo.
+#
+#   * For files/dirs matching 'cfg_*', a symlink ('*') is created in
+#    '$HOME/.config' pointing back into this git repo.
 #
 
 unalias ls 2>/dev/null
@@ -9,28 +17,54 @@ BASE="${PWD#${HOME}/}"
 
 cd $HOME
 
+function create_link() {
+    tgt="$1"
+    lnk="$2"
+
+    if [ ! -e "${tgt}" ]
+    then
+        # Don't create broken symlinks
+        echo "skip: missing target:              ${tgt}"
+        return 1
+    fi
+
+    if [ -e "${lnk}" ]
+    then
+        if [ -L "${lnk}" ]
+        then
+            echo "skip: symlink exists:              ${lnk}"
+        else
+            echo "skip: file exists (not a symlink): ${lnk}"
+        fi
+        return 1
+    fi
+
+    if [ -L "${lnk}" ]
+    then
+        # When `-e` fails and `-L` succeeds, the symlink is broken.
+        echo "Rmoving broken link:               ${lnk}"
+        rm "${lnk}"
+    fi
+
+    echo ln -s "${tgt}" "${lnk}"
+    ln -s "${tgt}" "${lnk}"
+}
+
+# Stop globs from returning '${BASE}/_*' if nothing matches glob.
+shopt -s nullglob
+
 for tgt in ${BASE}/_*
 do
     lnk="$(basename ${tgt})"
     lnk=".${lnk#_}"
 
-    if [ -e ${lnk} ]
-    then
-        if [ -L ${lnk} ]
-        then
-            echo "skip: symlink exists:              ${lnk} "
-        else
-            echo "skip: file exists (not a symlink): ${lnk}"
-        fi
-        continue
-    fi
+    create_link "${tgt}" "${lnk}"
+done
 
-    if [ -L ${lnk} ]
-    then
-        echo "Removing broken link: ${lnk}"
-        rm ${lnk}
-    fi
+for tgt in ${BASE}/cfg_*
+do
+    lnk="$(basename ${tgt})"
+    lnk=".config/${lnk#cfg_}"
 
-    echo ln -s ${tgt} ${lnk}
-    ln -s ${tgt} ${lnk}
+    create_link "../${tgt}" "${lnk}"
 done
