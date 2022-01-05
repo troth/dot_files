@@ -18,3 +18,4 @@ vim.opt.incsearch = true
 -- Display
 vim.opt.number = true
 vim.opt.cc = "80"
+vim.opt.signcolumn = "yes"
