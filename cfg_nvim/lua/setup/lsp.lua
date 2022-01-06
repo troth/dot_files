@@ -46,8 +46,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 local servers = {
     'ccls',
     'pylsp',
-    --'pyright',
-    --'rust_analyzer',
+    'rust_analyzer',
     --'tsserver',
 }
 for _, lsp in ipairs(servers) do

@@ -96,3 +96,12 @@ in a shell that has activated the virtual environment.
 
 TODO: There is supposedly a way to configure `nvim` to automatically load the
 virtual environment, but I have not yet investigated how to do that.
+
+Installing Rust Language Server
+-------------------------------
+
+Follow the installation instructions here:
+
+* https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary
+
+I put the binary in `~/.cargo/bin/` since that is already in my `$PATH`.
