@@ -137,18 +137,37 @@ __env_ps1 ()
     fi
 }
 
-PS1='\n\
-$(_GRN_)### \
-$(__env_ps1)\
-$(_BLU_)[\T \D{%P}]\
-$(_CYN_)[${OS_REL}]\
-$(__git_ps1 "$(_RED_) Branch: %s")\
-\n\
-$(_GRN_)### [\u@\h:\w]$(_RESET_)\
-\n\
->--> \$ '
+__prompt_header ()
+{
+    (
+        # Display the prompt header.
+        printf '\n'
+        _GRN_
+        printf '### '
+        __env_ps1
+        _BLU_
+        printf '[%s]' "$(\date '+%r')"
+        _CYN_
+        printf "[${OS_REL}]"
+        __git_ps1 "$(_RED_) Branch: %s"
+        printf '\n'
+        _GRN_
+        printf "### [${USER}@$(hostname)]"
+        _RED_
+        printf "[$(dirs)]"
+        _RESET_
+        printf '\n'
 
-export PS1
+        # Update the title in the terminal.
+        printf "\033]0;bash\007"
+    ) 2>/dev/null
+}
+
+PROMPT_COMMAND=( __prompt_header )
+
+PS1='>--> \$ '
+
+export PROMPT_COMMAND PS1
 
 # Load a local profile if it exists
 if [ -f ~/.bash_profile_local ]; then
