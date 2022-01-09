@@ -61,10 +61,15 @@ do
     create_link "${tgt}" "${lnk}"
 done
 
-for tgt in ${BASE}/cfg_*
+cfg_tgts=(
+    ${BASE}/cfg_*
+)
+
+cd ${HOME}/.config
+for tgt in "${cfg_tgts[@]}"
 do
     lnk="$(basename ${tgt})"
-    lnk=".config/${lnk#cfg_}"
+    lnk="${lnk#cfg_}"
 
     create_link "../${tgt}" "${lnk}"
 done
