@@ -28,6 +28,13 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias env='env | sort'
 
+# Show an image in a kitty terminal
+# See: https://sw.kovidgoyal.net/kitty/kittens/icat/
+icat ()
+{
+    kitty +kitten icat "${@}"
+}
+
 path ()
 {
     echo "${PATH//:/$'\n'}"
