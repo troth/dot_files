@@ -33,46 +33,60 @@ PATH=$PATH:/sbin
 # Add all my home paths one at a time so that they are easy to comment
 # out.
 HOME_PATHS_PREPEND=(
+    ${HOME}/.cargo/bin
+    ${HOME}/.opt/kitty/bin
     ${HOME}/local/${OS_REL}/emacs/bin
 )
 HOME_PATHS_APPEND=(
     ${HOME}/local/${OS_REL}/bin
     ${HOME}/local/bin
     ${HOME}/.local/bin
-    ${HOME}/AppImages
     ${HOME}/.platformio/penv/bin
+    ${HOME}/AppImages
     ${HOME}/bin
+)
+HOME_MAN_PATHS=(
+    #${HOME}/local/${OS_REL}/man
+    #${HOME}/local/man
+    #${HOME}/.local/man
+)
+HOME_LD_LIB_PATHS=(
+    #${HOME}/local/${OS_REL}/lib
+    #${HOME}/local/lib
+    #${HOME}/.local/lib
 )
 
 for p in "${HOME_PATHS_PREPEND[@]}"
 do
     if [ -d "${p}" ]; then
-        PATH="${p}:$PATH"
+        PATH="${p}:${PATH}"
     fi
 done
 
 for p in "${HOME_PATHS_APPEND[@]}"
 do
     if [ -d "${p}" ]; then
-        PATH="$PATH:${p}"
+        PATH="${PATH}:${p}"
+    fi
+done
+
+for p in "${HOME_MAN_PATHS[@]}"
+do
+    if [ -d "${p}" ]; then
+        MANPATH="${MANPATH}:${p}"
+    fi
+done
+
+for p in "${HOME_LD_LIB_PATHS[@]}"
+do
+    if [ -d "${p}" ]; then
+        LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${p}"
     fi
 done
 
 export PATH
-
-MANPATH=$MANPATH:$HOME/man
-MANPATH=$MANPATH:$HOME/local/${OS_REL}/man
-#MANPATH=$MANPATH:$HOME/local/man
-
 export MANPATH
-
-if [ -d $HOME/local/${OS_REL}/lib ]; then
-    MY_LD_LIB_PATH=$HOME/local/${OS_REL}/lib
-fi
-
-export LD_LIBRARY_PATH=$MY_LD_LIB_PATH
-
-export PYTHONPATH=$HOME/bin/python
+export LD_LIBRARY_PATH
 
 export EDITOR=vim
 
