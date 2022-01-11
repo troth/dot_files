@@ -123,6 +123,11 @@ _BLU_ ()
     printf -- "\001$(tput setaf 4)\002"
 }
 
+_BBLU_ ()
+{  # Bold Blue
+    printf -- "\001$(tput setaf 13)\002"
+}
+
 _MAG_ ()
 {
     printf -- "\001$(tput setaf 5)\002"
@@ -136,6 +141,11 @@ _CYN_ ()
 _WHT_ ()
 {
     printf -- "\001$(tput setaf 7)\002"
+}
+
+_PROMPT_ ()
+{
+    printf -- "\001$(tput setaf 9)\002"
 }
 
 _RESET_ ()
@@ -167,7 +177,7 @@ __prompt_header ()
         printf '\n'
         _GRN_
         printf "### [${USER}@$(hostname)]"
-        _RED_
+        _BBLU_
         printf "[$(dirs)]"
         _RESET_
         printf '\n'
@@ -179,7 +189,7 @@ __prompt_header ()
 
 PROMPT_COMMAND=( __prompt_header )
 
-PS1='>--> \$ '
+PS1='$(_PROMPT_)>--> \$$(_RESET_) '
 
 export PROMPT_COMMAND PS1
 
