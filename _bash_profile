@@ -98,89 +98,38 @@ export CSCOPE_EDITOR="$HOME/bin/emacsclient-nowait"
 # See man pages for tput(1) and terminfo(5)
 # See also: https://wiki.archlinux.org/title/Bash/Prompt_customization
 #
-_BLK_ ()
-{
-    printf -- "\001$(tput setaf 0)\002"
-}
+blk=$(printf -- "\001$(tput setaf 0)\002")
+red=$(printf -- "\001$(tput setaf 1)\002")
+grn=$(printf -- "\001$(tput setaf 2)\002")
+yel=$(printf -- "\001$(tput setaf 3)\002")
+blu=$(printf -- "\001$(tput setaf 4)\002")
+mag=$(printf -- "\001$(tput setaf 5)\002")
+cyn=$(printf -- "\001$(tput setaf 6)\002")
+wht=$(printf -- "\001$(tput setaf 7)\002")
 
-_RED_ ()
-{
-    printf -- "\001$(tput setaf 1)\002"
-}
-
-_GRN_ ()
-{
-    printf -- "\001$(tput setaf 2)\002"
-}
-
-_YEL_ ()
-{
-    printf -- "\001$(tput setaf 3)\002"
-}
-
-_BLU_ ()
-{
-    printf -- "\001$(tput setaf 4)\002"
-}
-
-_BBLU_ ()
-{  # Bold Blue
-    printf -- "\001$(tput setaf 13)\002"
-}
-
-_MAG_ ()
-{
-    printf -- "\001$(tput setaf 5)\002"
-}
-
-_CYN_ ()
-{
-    printf -- "\001$(tput setaf 6)\002"
-}
-
-_WHT_ ()
-{
-    printf -- "\001$(tput setaf 7)\002"
-}
-
-_PROMPT_ ()
-{
-    printf -- "\001$(tput setaf 9)\002"
-}
-
-_RESET_ ()
-{
-    printf -- "\001$(tput sgr0)\002"
-}
-
-__env_ps1 ()
-{
-    if [ -n "${ENV_PROMPT}" ]
-    then
-        printf -- "$(_RED_)[${ENV_PROMPT}]$(_BLK_)"
-    fi
-}
+prp=$(printf -- "\001$(tput setaf 13)\002")
+prmpt=$(printf -- "\001$(tput setaf 9)\002")
+bold=$(printf -- "\001$(tput bold)\002")
+dim=$(printf -- "\001$(tput dim)\002")
+reset=$(printf -- "\001$(tput sgr0)\002")
 
 __prompt_header ()
 {
     (
         # Display the prompt header.
-        printf '\n'
-        _GRN_
-        printf '### '
-        __env_ps1
-        _BLU_
-        printf '[%s]' "$(\date '+%r')"
-        _CYN_
-        printf "[${OS_REL}]"
-        __git_ps1 "$(_RED_) Branch: %s"
-        printf '\n'
-        _GRN_
-        printf "### [${USER}@$(hostname)]"
-        _BBLU_
-        printf "[$(dirs)]"
-        _RESET_
-        printf '\n'
+        printf "\n${dim}${grn}### ${blu}[$(\date '+%r')]${cyn}[${OS_REL}]${reset}"
+        __git_ps1 "${bold}${red} Branch: %s"
+        printf "\n${reset}${dim}${grn}### [${USER}@$(hostname)] ${prp}[$(dirs +0)]\n"
+
+        # Show the pushd/popd directory stack. The 'tail -n +2' skips the first
+        # directory since that is shown above.
+        cnt=1
+        for d in $(dirs -p | tail -n +2)
+        do
+            printf "${grn}### %4d : ${prp}%s\n" $(( cnt++ )) "${d}"
+        done
+
+        printf "${reset}"
 
         # Update the title in the terminal.
         printf "\033]0;bash\007"
@@ -189,7 +138,7 @@ __prompt_header ()
 
 PROMPT_COMMAND=( __prompt_header )
 
-PS1='$(_PROMPT_)>--> \$$(_RESET_) '
+PS1='${bold}${grn}### ${prmpt}>--> \$${reset} '
 
 export PROMPT_COMMAND PS1
 
