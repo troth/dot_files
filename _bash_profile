@@ -179,12 +179,16 @@ mkdir -p "$HOME/Yocto/HashEq"
 export HASH_EQUIV_DIR="$HOME/Yocto/HashEq"
 
 # Variables we need bitbake to get from environment.
-TROTH_EXTRAWHITE=(
+TROTH_PASSTHROUGH_ADDITIONS=(
     DL_DIR
     SSTATE_DIR
     HASH_EQUIV_DIR
 )
 
-export BB_ENV_EXTRAWHITE="${BB_ENV_EXTRAWHITE} ${TROTH_EXTRAWHITE[@]}"
+# Yocto is changing use of WHITELIST naming to PASSTHROUGH to improve DEI
+# wording (Diversity, Equity, Inclusivity). I'm still using to old variable
+# names here for backwards compatibility.
+export BB_ENV_PASSTHROUGH_ADDITIONS="${BB_ENV_PASSTHROUGH_ADDITIONS} ${TROTH_PASSTHROUGH_ADDITIONS[@]}"
+export BB_ENV_EXTRAWHITE="${BB_ENV_EXTRAWHITE} ${TROTH_PASSTHROUGH_ADDITIONS[@]}"
 
 ${ENV_YOCTO_INIT}
