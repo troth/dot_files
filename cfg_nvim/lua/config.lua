@@ -22,3 +22,8 @@ vim.opt.signcolumn = "yes"
 
 -- Colors
 vim.cmd("highlight Search ctermbg=LightRed ctermfg=Black")
+
+-- Highlight trailing white space
+vim.cmd("highlight WhiteSpaceEOL ctermbg=darkgreen guibg=lightgreen")
+vim.cmd("match WhiteSpaceEOL /\\s\\+$/")
+vim.cmd("autocmd WinEnter * match WhiteSpaceEOL /\\s\\+$/")
