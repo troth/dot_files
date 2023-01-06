@@ -5,5 +5,3 @@ vim.g.mapleader = ';'
 require('config')
 require('keymaps.general')
 require('plugins')
-require('setup.lsp')
-require('setup.cmp')
