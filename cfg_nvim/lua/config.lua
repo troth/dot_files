@@ -25,6 +25,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
 
 -- Colors
+vim.opt.termguicolors = true
 vim.cmd("highlight Search ctermbg=lightyellow ctermfg=darkred")
 vim.cmd("highlight ColorColumn ctermbg=lightgrey guibg=lightgrey")
 

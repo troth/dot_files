@@ -22,6 +22,9 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
 
+  -- Color Themes
+  use('projekt0n/github-nvim-theme')
+
   -- LSP Support
   use('neovim/nvim-lspconfig')
 
