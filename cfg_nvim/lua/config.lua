@@ -22,6 +22,7 @@ vim.opt.incsearch = true
 vim.opt.number = true
 vim.opt.cc = "80"
 vim.opt.signcolumn = "yes"
+vim.opt.scrolloff = 8
 
 -- Colors
 vim.cmd("highlight Search ctermbg=LightRed ctermfg=Black")
