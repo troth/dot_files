@@ -25,7 +25,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
 
 -- Colors
-vim.cmd("highlight Search ctermbg=LightRed ctermfg=Black")
+vim.cmd("highlight Search ctermbg=lightyellow ctermfg=darkred")
 
 -- Highlight trailing white space
 vim.cmd("highlight WhiteSpaceEOL ctermbg=darkgreen guibg=lightgreen")
