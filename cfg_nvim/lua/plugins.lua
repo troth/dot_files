@@ -18,6 +18,10 @@ return require('packer').startup(function(use)
   -- Add plugins here
   use('wbthomason/packer.nvim')
 
+  -- Syntax parsing
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use('nvim-treesitter/playground')
+
   -- LSP Support
   use('neovim/nvim-lspconfig')
 
