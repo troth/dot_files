@@ -26,3 +26,5 @@
 [core]
 	hooksPath = ~/.githooks
 	excludesfile = ~/.gitignore
+[init]
+	defaultBranch = main
