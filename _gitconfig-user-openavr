@@ -2,3 +2,10 @@
 	name = Theodore A. Roth
 	email = troth@openavr.org
 	signingkey = BF40A052
+
+[sendemail]
+	smtpEncryption = tls
+	smtpServer = smtp.gmail.com
+	#smtpServer = smtp.googlemail.com
+	smtpServerPort = 587
+	smtpUser = troth@openavr.org
