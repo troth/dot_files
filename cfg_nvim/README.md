@@ -8,20 +8,27 @@ Installing NeoVim (aka nvim)
 ----------------------------
 
 The neovim Ubuntu packages prior to 22.04 are too old, as this configuration
-requires neovim >= 0.5.0 (developed and tested with 0.6.1 at the time of this
+requires neovim >= 0.8.0 (developed and tested with 0.8.2 at the time of this
 writing).
 
-Download the AppImage from the NeoVim github releases:
+Ubuntu 22.04 includes nvim 0.6.1, but now 0.8.2 is available. Using Packer causes
+packages to be updated from git repos and some of those packages require >= 0.7.0
+now. As such, I'm not using the version of nvim from Ubuntu, but installing the
+nvim-0.8.2 deb package (or newer) they are releasing on github:
 
 * https://github.com/neovim/neovim/releases
 
-I typically install in `~/AppImages/` like this:
+The AppImage can still be used as noted below. Download the AppImage from the
+NeoVim github releases link above.
+
+I typically install the .deb package, but you can also install in `~/AppImages/`
+like this:
 
     $ cd ~/AppImages
     $ curl -v <url-of-appimage-file>
     $ chmod 755 nvim.appimage
-    $ mv nvim.appimage nvim-0.6.1.appimage
-    $ ln -s nvim-0.6.1.appimage nvim
+    $ mv nvim.appimage nvim-0.8.2.appimage
+    $ ln -s nvim-0.8.2.appimage nvim
     $ ln -s nvim nv
 
 After you have installed the language servers, you will need to have nvim
@@ -30,8 +37,8 @@ install all of the configured plugins. Fire up nvim and run the following:
     :PackageSync
     :qa
 
-I usually need to do that three times before I don't see any errors or warnings
-when starting up `nvim` (have not yet dug into why that is happening).
+I usually need to do that multiple times before I don't see any errors or
+warnings when starting up `nvim` (have not yet dug into why that is happening).
 
 Installing C/C++ Language Server
 --------------------------------
