@@ -41,6 +41,9 @@ return require('packer').startup(function(use)
   use('hrsh7th/nvim-cmp')
   use('saadparwaiz1/cmp_luasnip')
 
+  -- Improved undo
+  use('mbbill/undotree')
+
   -- Git Support
   use('tpope/vim-fugitive')
 

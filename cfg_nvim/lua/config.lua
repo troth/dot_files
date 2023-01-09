@@ -24,6 +24,12 @@ vim.opt.cc = "80"
 vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
 
+-- Undo
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
 -- Colors
 vim.opt.termguicolors = true
 vim.cmd("highlight Search ctermbg=lightyellow ctermfg=darkred")
