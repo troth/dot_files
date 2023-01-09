@@ -127,3 +127,13 @@ The key bindings to use it:
 * `<leader>pf` : Find files within a project.
 * `<C-p>`      : Find git files.
 * `<leader>ps` : Grep files in project.
+
+Moving Selected Block
+---------------------
+
+When a block is selected with `<Shift-v>`, you can now move it with:
+
+* `K` : Move block up
+* `J` : Move block down
+
+The indent will change as needed whie moving the block.
