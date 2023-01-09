@@ -112,3 +112,18 @@ Follow the installation instructions here:
 * https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary
 
 I put the binary in `~/.cargo/bin/` since that is already in my `$PATH`.
+
+Fuzzy File Finding
+------------------
+
+The `telescope` plugin allows finding files and greping through files. For it
+to work, you need to install the following extra packages in the os (use apt):
+
+* `ripgrep`
+* `fd-find`
+
+The key bindings to use it:
+
+* `<leader>pf` : Find files within a project.
+* `<C-p>`      : Find git files.
+* `<leader>ps` : Grep files in project.
