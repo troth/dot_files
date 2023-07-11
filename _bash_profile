@@ -119,16 +119,16 @@ __prompt_header ()
         # Display the prompt header.
         printf "\n${dim}${grn}### ${blu}[$(\date '+%r')]${cyn}[${OS_REL}]${reset}"
         __git_ps1 "${bold}${red} Branch: %s"
-        printf "\n${reset}${dim}${grn}### [${USER}@$(hostname)] ${prp}[$(dirs +0)]\n"
 
         # Show the pushd/popd directory stack. The 'tail -n +2' skips the first
         # directory since that is shown above.
         cnt=1
         for d in $(dirs -p | tail -n +2)
         do
-            printf "${grn}### %4d : ${prp}%s\n" $(( cnt++ )) "${d}"
+            printf "\n${reset}${dim}${grn}### %4d : ${prp}%s" $(( cnt++ )) "${d}"
         done
 
+        printf "\n${reset}${dim}${grn}### [${USER}@$(hostname)] ${prp}[$(dirs +0)]\n"
         printf "${reset}"
 
         # Update the title in the terminal.
