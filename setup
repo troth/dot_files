@@ -61,6 +61,8 @@ do
     create_link "${tgt}" "${lnk}"
 done
 
+create_link ${BASE}/LSP LSP
+
 cfg_tgts=(
     ${BASE}/cfg_*
 )
