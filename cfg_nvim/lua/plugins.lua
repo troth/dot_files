@@ -28,7 +28,7 @@ return require('packer').startup(function(use)
   })
 
   -- Color Themes
-  use('projekt0n/github-nvim-theme')
+  --use('projekt0n/github-nvim-theme')
 
   -- LSP Support
   use('neovim/nvim-lspconfig')
