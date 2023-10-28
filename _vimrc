@@ -21,6 +21,8 @@ set ruler               " show the cursor position all the time
 
 set expandtab           " insert spaces instead of tabs
 
+set nu
+
 " Map C-n to tabnext and C-p ro tabprevious.
 " These aren't needed - C-PageUp/C-PageDown work the same.
 "nnoremap <silent> <C-n> :tabnext<CR>
@@ -99,7 +101,7 @@ endif
 
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Monospace\ 8
+    set guifont=Monospace\ 10
   endif
 endif
 
@@ -231,8 +233,8 @@ if version >= 500
 	"hi NonText        term=bold  cterm=bold  ctermfg=4
 	"hi Directory      term=bold  ctermfg=4
 	"hi ErrorMsg       term=standout  cterm=bold  ctermfg=7  ctermbg=1
-	"hi IncSearch      term=reverse  cterm=reverse
-	"hi Search         term=reverse  ctermbg=3
+	hi IncSearch       term=reverse  ctermbg=LightRed ctermfg=Black
+	hi Search          term=reverse  ctermbg=LightRed ctermfg=Black
 	"hi MoreMsg        ctermfg=2
 	"hi ModeMsg        term=bold  cterm=bold
 	"hi LineNr         term=underline  ctermfg=3
