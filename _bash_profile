@@ -84,9 +84,25 @@ do
     fi
 done
 
+#
+# CDPATH sets up search pathes for the `cd` command in bash so you don't need
+# to provide the full path to a directory you use often.
+#
+unset CDPATH
+CDPATH=.
+CDPATH=$CDPATH:~/work/judo
+CDPATH=$CDPATH:~/work/judo/judo-main/build/tmp/deploy/images
+CDPATH=$CDPATH:~/work/judo/judo-main/build/tmp/work
+CDPATH=$CDPATH:~/work/bedrock
+CDPATH=$CDPATH:~/work/bedrock/bedrock-main/build-rpi4/tmp/deploy/images
+CDPATH=$CDPATH:~/work/bedrock/bedrock-main/build-rpi4/work
+CDPATH=$CDPATH:~/git
+CDPATH=$CDPATH:~/yocto
+
 export PATH
 export MANPATH
 export LD_LIBRARY_PATH
+export CDPATH
 
 export EDITOR=vim
 
