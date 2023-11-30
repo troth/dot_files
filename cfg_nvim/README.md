@@ -136,4 +136,18 @@ When a block is selected with `<Shift-v>`, you can now move it with:
 * `K` : Move block up
 * `J` : Move block down
 
-The indent will change as needed whie moving the block.
+The indent will change as needed while moving the block.
+
+Parsing Tools
+-------------
+
+Install tree-sitter-cli:
+
+    $ cargo install tree-sitter-cli
+
+Checking NVIM installation
+--------------------------
+
+Start up nvim and run:
+
+    :checkhealth
