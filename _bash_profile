@@ -95,7 +95,7 @@ CDPATH=$CDPATH:~/work/judo/judo-main/build/tmp/deploy/images
 CDPATH=$CDPATH:~/work/judo/judo-main/build/tmp/work
 CDPATH=$CDPATH:~/work/bedrock
 CDPATH=$CDPATH:~/work/bedrock/bedrock-main/build-rpi4/tmp/deploy/images
-CDPATH=$CDPATH:~/work/bedrock/bedrock-main/build-rpi4/work
+CDPATH=$CDPATH:~/work/bedrock/bedrock-main/build-rpi4/tmp/work
 CDPATH=$CDPATH:~/git
 CDPATH=$CDPATH:~/yocto
 
