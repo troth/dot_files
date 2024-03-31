@@ -32,6 +32,7 @@ vim.opt.undofile = true
 
 -- Colors
 vim.opt.termguicolors = true
+vim.opt.background = "light"
 vim.cmd("highlight Search ctermbg=lightyellow ctermfg=darkred")
 vim.cmd("highlight ColorColumn ctermbg=lightgrey guibg=lightgrey")
 
