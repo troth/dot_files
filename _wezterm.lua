@@ -40,17 +40,17 @@ config.color_scheme = 'Cupertino (base16)'  -- workable
 
 config.colors = {
     foreground = 'black',
-    background = 'grey80',
+    background = '#dddddd',
 
 	tab_bar = {
 		background = 'grey75',
 		active_tab = {
-			bg_color = 'grey80',
+			bg_color = '#dddddd',
 			fg_color = 'black',
 			intensity = 'Bold',
 		},
 		inactive_tab = {
-			bg_color = 'grey30',
+			bg_color = 'grey20',
 			fg_color = 'grey85',
 			intensity = 'Half',
 		},
@@ -86,7 +86,7 @@ config.colors = {
 
 config.window_frame = {
 	font_size = 9.0,
-	active_titlebar_bg = 'grey90',
+	active_titlebar_bg = 'grey60',
 	inactive_titlebar_bg = 'yellow',
 }
 
