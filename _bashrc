@@ -82,7 +82,7 @@ rmpath ()
 	then
 		# If no args given , then rmpath.py will just remove duplicity
 		# from PATH and will always remove '.'.
-		PATH=$($HOME/bin/rmpath.py $@)
+		PATH=$($HOME/bin/rmpath.py "$@")
 		export PATH
 		echo "PATH is now:"
 		echo $PATH
