@@ -87,6 +87,11 @@ do
     fi
 done
 
+# Ubuntu-26.04 uses gcr and gnome-keyring for the ssh agent.
+if [ -e $XDG_RUNTIME_DIR/gcr/ssh ] && [ -z "${SSH_AUTH_SOCK}" ]; then
+    export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+fi
+
 #
 # CDPATH sets up search pathes for the `cd` command in bash so you don't need
 # to provide the full path to a directory you use often.
