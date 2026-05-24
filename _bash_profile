@@ -193,20 +193,30 @@ done
 # builds.
 #
 
-mkdir -p "$HOME/Yocto/Downloads"
 export DL_DIR="$HOME/Yocto/Downloads"
+mkdir -p "${DL_DIR}"
 
-mkdir -p "$HOME/Yocto/SState"
 export SSTATE_DIR="$HOME/Yocto/SState"
+mkdir -p "${SSTATE_DIR}"
 
-mkdir -p "$HOME/Yocto/HashEq"
-export HASH_EQUIV_DIR="$HOME/Yocto/HashEq"
+export PERSISTENT_DIR="$HOME/Yocto/Cache"
+mkdir -p "${PERSISTENT_DIR}"
+
+#export HASH_EQUIV_DIR="$HOME/Yocto/HashEq"
+#mkdir -p "${HASH_EQUIV_DIR}"
+
+export ROOT_CA_CERT_DIR="$HOME/Yocto/CACerts"
+mkdir -p "${ROOT_CA_CERT_DIR}"
 
 # Variables we need bitbake to get from environment.
 TROTH_PASSTHROUGH_ADDITIONS=(
     DL_DIR
     SSTATE_DIR
+    PERSISTENT_DIR
     HASH_EQUIV_DIR
+    ROOT_CA_CERT_DIR
+    ARTIFACTORY_WEBUI_USR
+    ARTIFACTORY_WEBUI_TOK
 )
 
 # Yocto is changing use of WHITELIST naming to PASSTHROUGH to improve DEI
