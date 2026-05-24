@@ -43,6 +43,7 @@ HOME_PATHS_APPEND=(
     #${HOME}/local/bin
     ${HOME}/.local/bin
     ${HOME}/.opt/arm-gnu-toolchain-x86_64-arm-none-eabi/bin
+    ${HOME}/.opt/ollama/bin
     ${HOME}/.platformio/penv/bin
     ${HOME}/AppImages
     ${HOME}/bin
