@@ -220,3 +220,7 @@ export BB_ENV_PASSTHROUGH_ADDITIONS="${BB_ENV_PASSTHROUGH_ADDITIONS} ${TROTH_PAS
 export BB_ENV_EXTRAWHITE="${BB_ENV_EXTRAWHITE} ${TROTH_PASSTHROUGH_ADDITIONS[@]}"
 
 ${ENV_YOCTO_INIT}
+
+# Returning can stop stupid installers that append to the end of this file from
+# actually getting to run their additions.
+return 0

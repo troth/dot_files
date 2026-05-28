@@ -96,3 +96,7 @@ rmpath >/dev/null 2>&1
 if [ -f ~/.bashrc.local ]; then
 	. ~/.bashrc.local
 fi
+
+# Returning can stop stupid installers that append to the end of this file from
+# actually getting to run their additions.
+return 0
