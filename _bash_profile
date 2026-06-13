@@ -36,10 +36,8 @@ HOME_PATHS_PREPEND=(
     ${HOME}/.cargo/bin
     ${HOME}/.opt/kitty/bin
     ${HOME}/.opt/nvim/bin
-    ${HOME}/local/${OS_REL}/emacs/bin
 )
 HOME_PATHS_APPEND=(
-    #${HOME}/local/${OS_REL}/bin
     #${HOME}/local/bin
     ${HOME}/.local/bin
     ${HOME}/.opt/arm-gnu-toolchain-x86_64-arm-none-eabi/bin
@@ -49,12 +47,10 @@ HOME_PATHS_APPEND=(
     ${HOME}/bin
 )
 HOME_MAN_PATHS=(
-    #${HOME}/local/${OS_REL}/man
     #${HOME}/local/man
     #${HOME}/.local/man
 )
 HOME_LD_LIB_PATHS=(
-    #${HOME}/local/${OS_REL}/lib
     #${HOME}/local/lib
     #${HOME}/.local/lib
 )
