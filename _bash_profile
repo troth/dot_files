@@ -48,11 +48,11 @@ HOME_PATHS_APPEND=(
 )
 HOME_MAN_PATHS=(
     #${HOME}/local/man
-    #${HOME}/.local/man
+    ${HOME}/.local/man
 )
 HOME_LD_LIB_PATHS=(
     #${HOME}/local/lib
-    #${HOME}/.local/lib
+    ${HOME}/.local/lib
 )
 
 for p in "${HOME_PATHS_PREPEND[@]}"
@@ -72,14 +72,14 @@ done
 for p in "${HOME_MAN_PATHS[@]}"
 do
     if [ -d "${p}" ]; then
-        MANPATH="${MANPATH}:${p}"
+        MANPATH="${MANPATH:+${MANPATH}:}${p}"
     fi
 done
 
 for p in "${HOME_LD_LIB_PATHS[@]}"
 do
     if [ -d "${p}" ]; then
-        LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${p}"
+        LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}${p}"
     fi
 done
 
